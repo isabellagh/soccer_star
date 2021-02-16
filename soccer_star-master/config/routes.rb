@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get '/auth/facebook/callback' => 'sessions#create'
 
-  #get '/auth/twitter/callback', to: 'sessions#create'
+  get '/auth/:provider/callback', to: 'sessions#google'
   #http://localhost:3000/auth/github/callback
 
   resources :users, except: [:new, :index] do 
