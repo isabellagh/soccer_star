@@ -1,0 +1,17 @@
+<h2>Edit </h2>
+
+<%= form_for(@user) do |f| %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "Name" %>
+  </div>
+  <div class="field">
+    <%= f.label :image_url %><br />
+    <%= f.text_field :image_url, autofocus: true, autocomplete: "image_url" %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>

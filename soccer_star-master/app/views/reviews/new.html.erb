@@ -1,0 +1,31 @@
+<h1>Create a review</h1> <!-- nested -->
+  
+  <%= render partial: 'layouts/errors', locals: {object: @review} %>
+
+  <%= form_for(@review) do |f| %>
+    <% if params[:player_id] %>
+      <% f.hidden_field :player_id %>
+    <% else %>
+    <div>
+      <%= f.label :player_id, "Select a Player" %>
+      <%= f.collection_select :player_id, Player.alpha, :id, :name, include_blank: true %>
+    </div>
+  <% end %>
+    <div>
+      <%= f.label :stars %>
+      <%= f.number_field :stars, min:0, max:5 %>
+    </div>
+  <br>
+    <div>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+  <br>
+    <div>
+      <%= f.label :content %>
+      <%= f.text_area :content %>
+    </div>
+  <br>
+  <br>
+      <%= f.submit %>
+  <% end %>

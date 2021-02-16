@@ -1,0 +1,22 @@
+<br>
+<h1 style="text-align:center"><%= current_user.name %></h1>
+  <br>
+  <br>
+  <img src="<%= current_user.image_url %>" class="center" height="auto"; width="50%">
+<style>
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+   width: 50%;
+  }
+</style>
+  <br><br>
+<h3 style="text-align:center"> <strong>Email: <%= current_user.email %></strong></h3>
+  <br>
+<h4 style="text-align:center"><%= link_to 'Edit Profile', edit_user_path %></h4>  
+  <br><br>
+
+
+
+

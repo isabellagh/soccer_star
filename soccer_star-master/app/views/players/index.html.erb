@@ -1,0 +1,24 @@
+<br>
+<h1>Soccer Players</h1>
+<br>
+
+<ol> 
+  <% @players.each do |player| %>
+    <li><h3><%= player.name.titleize %> - <%= player.team.name %></h3></li>  
+      <%= link_to "View", player_path(player.id) %> 
+   <br><br>
+  <% end %>
+ 
+ 
+
+   
+   
+
+   
+
+ 
+
+       
+       
+      
+
