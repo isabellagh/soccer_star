@@ -11,8 +11,6 @@ class PlayersController < ApplicationController
     @player.user_id = session[:user_id]
 
     if @player.save
-      #@player.image.purge
-      #@player.image.attach(params[:player][:image])
       flash[:success] = "Object successfully created"
       redirect_to player_path(@player)
     else

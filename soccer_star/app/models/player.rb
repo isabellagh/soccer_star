@@ -27,18 +27,9 @@ class Player < ApplicationRecord
     joins(:team).where("LOWER(players.name) LIKE ? OR LOWER(teams.name) LIKE ?", "%#{params}%", "%#{params}%") 
    end
 
- # def team_name
-  #  team.try(:name)
-  #end
-
   #def thumbnail
   #  self.image.variant(resize: "100x100")
   #end 
-
-  #def player_and_team
-  #  "#{name} - #{team.name}"
-  #end 
-
 
 private 
 
