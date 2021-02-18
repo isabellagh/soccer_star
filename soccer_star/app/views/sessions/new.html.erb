@@ -1,0 +1,23 @@
+<br>
+<h1>Log in!</h1>
+
+  <%= form_for(:session, url: login_path) do |f| %>
+    <div>
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+    </div>
+      <br>
+    <div>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+      <br>
+    <div>
+      <%= f.submit "Log in" %>
+    </div>
+      <br>
+    <div>
+      <!--<%= link_to "Sign in with Twitter", "/auth/twitter" %>-->
+      <%= link_to "Log In with Google", "/auth/google_oauth2", class: "btn btn-default navbar-btn" %>
+    </div>
+  <% end %>

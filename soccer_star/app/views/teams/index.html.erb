@@ -1,0 +1,8 @@
+<br>
+<h1>All the Teams</h1>
+<br>
+  <ul>
+    <% @teams.each do |team| %>
+      <li><h3><%= link_to team.name, team_path(team) %> - <%= team.country %></h3></li>
+    <% end %>
+</ul>
