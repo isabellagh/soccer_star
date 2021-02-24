@@ -1,0 +1,16 @@
+<br>
+<h4> To see this player's reviews, <%= link_to "click here", player_reviews_path(@player.id) %></h4>
+  <br>
+<h2><%= @player.name.titleize %></h2>
+<h3><%= @player.team.name %> - <%= @player.team.country %></h3>
+  <% if @player.image.attached? %>
+    <%= image_tag url_for(@player.image) %>
+  <% end %>
+    <br><br>
+  <strong><p>Created by: <%= @player.user.name %></p></strong>
+<br>
+<br>
+
+
+
+

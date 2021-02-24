@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <style>
+        body {
+          background-color: lightblue;
+        }
+      </style>
+      <style>
+        .center {
+          text-align: center;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="center jumbotron">
+        <br>
+        <br>
+      <h1>Welcome to Soccer Star!</h1>
+        <br>
+        <br>
+        <p><%= link_to "Log in", "/login", class: "btn btn-primary btn-lg" %></p>
+        <p><%= link_to "Sign Up", "/signup", class: "btn btn-primary btn-lg" %></p>
+        <p><%= link_to "Log in with Facebook", "/auth/facebook" %></p>
+      </div>
+      </body>
+</html>

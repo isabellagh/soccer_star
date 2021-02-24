@@ -1,0 +1,7 @@
+<br>
+<h1>Players</h1>
+<br>
+<ol>
+  <% @team.players.each do |player| %>
+    <li><h3><%= link_to player.name.titleize, player_path(player) %></h3></li>
+  <% end %>

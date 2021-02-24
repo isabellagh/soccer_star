@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SoccerStar</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <% if logged_in? %>
+      <%= render 'layouts/usernavbar' %>
+    <% else %>
+      <%= render 'layouts/welcomenavbar' %>
+    <% end %>
+
+
+    <% if flash[:error] %>
+      <h3 style="color:red;"> <%= flash[:error] %></h3>
+      <% end %>
+
+      <% if flash[:message] %>
+      <h3 style="color:green;"> <%= flash[:message] %></h3>
+      <% end %>
+    <div class='container'>
+
+      
+    <%= yield %>
+    </div>
+  </body>
+</html>
