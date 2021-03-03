@@ -18,15 +18,5 @@ class User < ApplicationRecord
     #  end 
     #end 
 
-    #def self.github_signup(auth)
-      #User.where(email: auth[:info][:email]).first_or_initialize do |u|  (same thing)
-    #  self.find_or_create_by(email: auth[:info][:email]) do |u|
-    #    u.password = SecureRandom.hex
-    #  end 
-    #end 
-
-    
-    
-
-end
+ end
  

@@ -13,7 +13,6 @@ class TeamsController < ApplicationController
     @team = Team.find_by(id: params[:id])
   end
   
-   
   private
 
   def team_params
