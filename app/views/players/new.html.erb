@@ -1,42 +1,6 @@
-<h2>Create a new player!</h2>
-
 <%= render partial: 'layouts/errors', locals: {object: @player} %>
 
-<%= form_for(@player) do |f| %>
-  <div>
-    <%= f.label "Player" %>
-    <%= f.text_field :name %>
-  </div>
-  <br>
-  <div>
-    <%= f.label :gender %>
-    <%= f.text_field :gender %>
-  </div>
-  <br>
-  <div>
-    <%= f.label :image %>
-    <%= f.file_field :image %>
-  </div>
-  
-    <br>
-  <p> Select a team </p>
-    <div>
-      <%= f.collection_select :team_id, Team.all, :id, :name,
-      include_blank: 'Select one team' %>
-    </div>
-    <br>
-  <h4> Other: </h4>
-    <%= f.fields_for :team do |t| %>
-      <div>
-        <%= t.label "Team" %>
-        <%= t.text_field :name %>
-      </div>
-        <br>
-       <div>
-        <%= t.label :country %>
-        <%= t.text_field :country %>
-    <% end %>
-       </div> 
-      <br><br>
-        <%= f.submit %>
-  <% end %>
+<br>
+<h2>Create a new player!</h2>
+
+<%= render 'forms' %>

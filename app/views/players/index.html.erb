@@ -5,7 +5,7 @@
 <ol> 
   <% @players.each do |player| %>
     <li><h3><%= player.name.titleize %> - <%= player.team.name %></h3></li>  
-      <%= link_to "View", player_path(player.id) %> 
+      <%= link_to "View", player_path(player.id), class: "btn btn-outline-success" %> 
    <br><br>
   <% end %>
  

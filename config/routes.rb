@@ -12,10 +12,9 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback' => 'sessions#create'
 
   get '/auth/:provider/callback', to: 'sessions#google'
-  #http://localhost:3000/auth/github/callback
 
   resources :users, except: [:new, :index] do 
-    resources :players # i dont really need it
+    resources :players # ???
   end 
   resources :reviews
   

@@ -20,6 +20,7 @@ class ReviewsController < ApplicationController
 
   def show 
     set_review
+    
   end 
 
   def index

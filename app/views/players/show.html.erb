@@ -6,8 +6,15 @@
   <% if @player.image.attached? %>
     <%= image_tag url_for(@player.image) %>
   <% end %>
-    <br><br>
-  <strong><p>Created by: <%= @player.user.name %></p></strong>
+<h3><%= @player.bio %></h3>
+<br>
+<h4>Position: <%= @player.position %></h4>
+    <br>
+<strong><p>Created by: <%= @player.user.name %></p></strong>
+<% if logged_in? && @player.user == current_user %>
+  <%= link_to "Edit", edit_player_path(@player), class: "btn btn-success" %>
+  <%= link_to "Delete", player_path(@player), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+<% end %>  
 <br>
 <br>
 

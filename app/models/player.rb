@@ -27,16 +27,9 @@ class Player < ApplicationRecord
     joins(:team).where("LOWER(players.name) LIKE ? OR LOWER(teams.name) LIKE ?", "%#{params}%", "%#{params}%") 
    end
 
- # def team_name
-  #  team.try(:name)
-  #end
 
   #def thumbnail
   #  self.image.variant(resize: "100x100")
-  #end 
-
-  #def player_and_team
-  #  "#{name} - #{team.name}"
   #end 
 
 
@@ -44,10 +37,10 @@ private
 
 def not_a_duplicate
   #throw an error if already exist a player with the name and team
-  if Player.find_by(name: name, team_id: team_id)
-    errors.add(:name, 'already exists for that team')
-  
-  end 
+  @player = Player.find_by(name: name, team_id: team_id)
+    if !!@player && @player != self
+      errors.add(:name, 'has already been added for that team')
+    end
 end 
 
  # def add_default_image

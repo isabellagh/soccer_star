@@ -1,4 +1,7 @@
 class UsersController < ApplicationController 
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, only: [:edit, :update]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
     
   def new
     @user = User.new
@@ -42,6 +45,17 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :image_url)
+  end 
+
+  def set_user
+    @user = User.find_by_id(params[:id])
+  end 
+
+  def require_same_user 
+    if current_user != @user
+      flash[:error] = "You can only edit or delete you own account"
+      redirect_to @user
+    end 
   end 
 
 
