@@ -25,8 +25,8 @@ class ReviewsController < ApplicationController
 
   def index
     if set_player
-      @reviews = @player.reviews 
-      #nested
+      @reviews = @player.reviews
+      flash[:error] = "No reviews for this player" if @reviews.empty?
     else 
       @reviews = Review.all.includes(:player, :user) #.includes(:player, :user) less queries?
       #not nested

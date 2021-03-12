@@ -1,1 +1,3 @@
-<%= render 'layouts/welcome' %>
+<% if !logged_in? %>
+  <%= render 'layouts/welcome' %>
+<% end %>

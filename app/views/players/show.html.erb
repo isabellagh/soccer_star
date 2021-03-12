@@ -1,6 +1,4 @@
 <br>
-<h4> To see this player's reviews, <%= link_to "click here", player_reviews_path(@player.id) %></h4>
-  <br>
 <h2><%= @player.name.titleize %></h2>
 <h3><%= @player.team.name %> - <%= @player.team.country %></h3>
   <% if @player.image.attached? %>
@@ -16,8 +14,13 @@
   <%= link_to "Delete", player_path(@player), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
 <% end %>  
 <br>
+<% if @player.reviews.empty? %>
+  <%= link_to "Review #{@player.name}", new_player_review_path(@player.id), class: "btn btn-success" %>
+<% else %>
+<h4> To see this player's reviews, <%= link_to "click here", player_reviews_path(@player.id) %></h4>
+<% end %>
 <br>
-
+<br>
 
 
 

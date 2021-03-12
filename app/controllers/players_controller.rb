@@ -1,5 +1,7 @@
 class PlayersController < ApplicationController
   before_action :require_user
+  before_action :set_player
+  before_action :redirect_if_not_owner, only: [:edit, :update]
  
   def new
     @player = Player.new
@@ -65,8 +67,8 @@ class PlayersController < ApplicationController
   end 
 
   def set_player
-    @player = Player.find_by_id(params[:player_id])
-    redirect_to players_path if !@player
+    @player = Player.find_by_id(params[:id])
+    
   end
 
 end

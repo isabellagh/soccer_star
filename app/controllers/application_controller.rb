@@ -27,4 +27,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def redirect_if_not_owner
+    if @player.user != current_user 
+      redirect_to player_path
+      flash[:error] = "You can only edit your own players!"
+    end 
+  end 
+
 end
