@@ -1,8 +1,8 @@
-<%= flash[:message] = "Review successfully created!" %>
+<% flash[:message] = "Review successfully created!" %>
 <h1><%= @review.player.name.titleize %> - <%= @review.player.team.name %></h1>
 <br>
 <h2>Stars: <%= @review.stars %></h2>
 <h3>Title: <%= @review.title %></h3>
 <h3>Content: <%= @review.content %></h3>
 
-<p>By, <%= @review.user.name %></p>
+<strong><p>By, <%= @review.user.name %></p></strong>

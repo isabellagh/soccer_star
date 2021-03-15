@@ -1,18 +1,21 @@
 <br>
 <h1>Soccer Players</h1>
 <br>
-
 <ol> 
   <% @players.each do |player| %>
     <li><h3><%= player.name.titleize %> - <%= player.team.name %></h3></li>  
       <%= link_to "View", player_path(player.id), class: "btn btn-outline-success" %> 
    <br><br>
   <% end %>
- 
- 
 
-   
-   
+
+<footer class="text-muted py-5">
+  <div class="container">
+    <p class="float-end mb-1">
+      <a href="#">Back to top</a>
+    </p>
+  </div>
+</footer>
 
    
 

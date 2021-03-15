@@ -7,7 +7,16 @@
       <h4>Star(s): <%= r.stars %></h4>
       <h4>Title: <%= r.title %></h4>
       <h5>Review: <%= r.content %></h5>
-      <strong><p>By, <%= r.user.name %></p></strong> 
+      <strong><p>By, <%= r.user.name %></p></strong>
     <br>
       <!-- <%= link_to 'Write a Review', new_player_review_path(:player_id) %> -->
     <% end %>
+
+
+<footer class="text-muted py-5">
+  <div class="container">
+    <p class="float-end mb-1">
+      <a href="#">Back to top</a>
+    </p>
+  </div>
+</footer>
