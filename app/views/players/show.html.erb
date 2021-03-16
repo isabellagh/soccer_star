@@ -1,6 +1,6 @@
 <br>
 <h2><%= @player.name.titleize %></h2>
-<h3><%= @player.team.name %> - <%= @player.team.country %></h3>
+<h3><%= @player.team.name %> - <%= @player.team.country %></h3><br>
   <% if @player.image.attached? %>
     <%= image_tag url_for(@player.image) %>
   <% end %>
@@ -15,7 +15,7 @@
 <% end %>  
 <br>
 <% if @player.reviews.empty? %>
-  <%= link_to "Review #{@player.name}", new_player_review_path(@player.id), class: "btn btn-success" %>
+  <br><%= link_to "Review #{@player.name}", new_player_review_path(@player.id), class: "btn btn-success" %>
 <% else %>
 <h4> To see this player's reviews, <%= link_to "click here", player_reviews_path(@player.id) %></h4>
 <% end %>
