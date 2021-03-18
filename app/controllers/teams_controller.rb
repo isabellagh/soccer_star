@@ -10,7 +10,7 @@ class TeamsController < ApplicationController
   end
 
   def show
-    @team = Team.find_by(id: params[:id])
+    @team = Team.find_by_id(params[:id])
   end
   
   private
@@ -18,5 +18,5 @@ class TeamsController < ApplicationController
   def team_params
     params.require(:team).permit(:name, :professional_team, :country)
   end
-
+  
 end

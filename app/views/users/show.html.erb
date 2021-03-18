@@ -1,5 +1,5 @@
 <br>
-<h1 style="text-align:center"><%= current_user.name %></h1>
+<h1 style="text-align:center"><%= current_user.name.titleize %></h1>
   <br>
   <br>
   <img src="<%= current_user.image_url %>" class="center" height="auto"; width="50%">
@@ -16,6 +16,7 @@
   <br>
 <h4 style="text-align:center"><%= link_to 'Edit Profile', edit_user_path, class: "btn btn-success" %></h4>  
   <br><br>
+<%= link_to "Delete profile", user_path(current_user), class: "dropdown-item text-danger", method: :delete, data: { confirm: "Are you sure?" } %>
 
 
 

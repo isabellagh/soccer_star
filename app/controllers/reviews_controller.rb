@@ -12,6 +12,7 @@ class ReviewsController < ApplicationController
   def create 
     @review = current_user.reviews.build(review_params)
     if @review.save
+      flash[:message] = "Review successful created"
       redirect_to review_path(@review)
     else
       render :new
@@ -20,7 +21,6 @@ class ReviewsController < ApplicationController
 
   def show 
     set_review
-    
   end 
 
   def index
@@ -44,8 +44,7 @@ class ReviewsController < ApplicationController
   end 
 
   def set_review
-    @review = Review.find_by(id: params[:id])
-    redirect_to reviews_path if !@review
+    @review = Review.find_by_id(params[:id])
   end
 
   def review_params

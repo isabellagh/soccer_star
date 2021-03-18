@@ -1,9 +1,9 @@
 class User < ApplicationRecord
     has_secure_password
     
-    has_many :reviews
-    has_many :reviewed_players, through: :reviews, source: :player
-    has_many :players
+    has_many :reviews, dependent: :destroy
+    has_many :reviewed_players, through: :reviews, source: :player, dependent: :destroy
+    has_many :players, dependent: :destroy
 
     before_save { self.email = email.downcase }
     validates :email, uniqueness: true, presence: true

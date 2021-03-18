@@ -26,19 +26,25 @@ class UsersController < ApplicationController
       redirect_to '/' if !logged_in?
   end
 
-
   def edit
-    @user = User.find_by_id(params[:id])
+    set_user
   end 
 
   def update 
-    @user = User.find_by_id(params[:id])
+    set_user
     if @user.update(user_params)
       flash[:success] = "user was updated successfully"
       redirect_to user_path(@user)
     else 
       render 'edit'
     end 
+  end
+
+  def destroy
+    @user.destroy
+    session[:user_id] = nil
+    flash[:notice] = "Account and all associated articles successfully deleted"
+    redirect_to '/'
   end
   
   private
@@ -57,7 +63,6 @@ class UsersController < ApplicationController
       redirect_to @user
     end 
   end 
-
 
 end
  

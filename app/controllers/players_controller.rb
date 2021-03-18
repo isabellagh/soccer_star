@@ -13,8 +13,6 @@ class PlayersController < ApplicationController
     @player.user_id = session[:user_id]
 
     if @player.save
-      #@player.image.purge
-      #@player.image.attach(params[:player][:image])
       flash[:success] = "Object successfully created"
       redirect_to player_path(@player)
     else
@@ -37,11 +35,11 @@ class PlayersController < ApplicationController
   end 
 
   def edit
-   @player = Player.find_by_id(params[:id])
+   set_player
   end 
 
   def update 
-   @player = Player.find_by_id(params[:id])
+   set_player
    if @player.update(player_params)
      flash[:success] = "Player was updated successfully"
      redirect_to player_path(@player)
@@ -51,11 +49,11 @@ class PlayersController < ApplicationController
  end 
 
   def show
-    @player = Player.find_by_id(params[:id])
+    set_player
   end 
 
   def destroy
-   Player.find(params[:id]).destroy
+    set_player.destroy
    flash[:success] = "Player deleted successfully"
    redirect_to players_path
   end 
@@ -68,7 +66,6 @@ class PlayersController < ApplicationController
 
   def set_player
     @player = Player.find_by_id(params[:id])
-    
   end
 
 end
