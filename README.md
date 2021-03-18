@@ -6,6 +6,7 @@ If you are looking for a specific player all you have to do is use the search ba
 ## Installation
 
 Clone the repository by typing: ```git clone https://github.com/isabellagh/soccer_star.git in your terminal.
+You will need to run "bundle install" after cloning the repository.
 
 
 ## Contributing
