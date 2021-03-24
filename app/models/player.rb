@@ -21,7 +21,7 @@ class Player < ApplicationRecord
   def team_attributes=(attributes)
     self.team = Team.find_or_create_by(attributes) if !attributes['name'].empty?
     self.team
-  end 
+  end
 
   def self.search(params)
     joins(:team).where("LOWER(players.name) LIKE ? OR LOWER(teams.name) LIKE ?", "%#{params}%", "%#{params}%") 

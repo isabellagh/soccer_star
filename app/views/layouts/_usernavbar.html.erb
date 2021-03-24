@@ -25,7 +25,7 @@
       <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
           <%= form_tag("/players", method: 'get') do %>          
-            <%= text_field_tag(:q, nil, placeholder: 'Search for a player') %>
+            <%= text_field_tag(:q, nil, placeholder: 'player or team') %>
             <%= submit_tag("Search") %>
           <% end %>
         </div>

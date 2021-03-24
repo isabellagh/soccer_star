@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#google'
 
   resources :users, except: [:new, :index] do 
-    resources :players # ???
+    resources :players # change it
   end 
   resources :reviews
   
