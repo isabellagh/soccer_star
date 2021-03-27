@@ -9,18 +9,8 @@
 <h4>Position: <%= @player.position %></h4>
     <br>
 <strong><p>Created by: <%= @player.user.name %></p></strong>
-<% if logged_in? && @player.user == current_user %>
-  <%= link_to "Edit", edit_player_path(@player), class: "btn btn-success" %>
-  <%= link_to "Delete", player_path(@player), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
-<% end %>  
-<br>
-<% if @player.reviews.empty? %>
-  <br><%= link_to "Review #{@player.name}", new_player_review_path(@player.id), class: "btn btn-success" %>
-<% else %>
-<h4> To see this player's reviews, <%= link_to "click here", player_reviews_path(@player.id) %></h4>
-<% end %>
-<br>
-<br>
+
+<%= render 'player_buttons' %>
 
 
 

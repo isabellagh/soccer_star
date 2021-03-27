@@ -1,5 +1,5 @@
 <h1>Create a review</h1>
-  
+   
   <%= render partial: 'layouts/errors', locals: {object: @review} %>
 
   <%= form_for(@review) do |f| %>
@@ -21,6 +21,7 @@
       <%= f.label :content %>
       <%= f.text_area :content %>
     </div>
+    <%= f.hidden_field :player_id %>
   <br>
   <br>
       <%= f.submit %>
