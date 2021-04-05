@@ -3,11 +3,5 @@
   <%= link_to "Delete", player_path(@player), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
 <% end %>  
 <br>
-<% if @player.reviews.empty? %>
-  <br><%= link_to "Review #{@player.name}", new_player_review_path(@player.id), class: "btn btn-success" %>
-<% else %>
-  <br><%= link_to "Review #{@player.name}", new_player_review_path(@player.id), class: "btn btn-success" %>
-  <br><br><h4> To see this player's reviews, <%= link_to "click here", player_reviews_path(@player.id) %></h4>
-<% end %>
 <br>
 <br>

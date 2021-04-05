@@ -12,5 +12,10 @@
 
 <%= render 'player_buttons' %>
 
+<%= link_to "Review #{@player.name}", new_player_review_path(@player.id), class: "btn btn-success" %><br><br>
+<h4> To see this player's reviews, <%= link_to "click here", player_reviews_path(@player.id) %></h4>
+
+
+
 
 

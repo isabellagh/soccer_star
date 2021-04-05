@@ -36,7 +36,6 @@ class Player < ApplicationRecord
 private 
 
 def not_a_duplicate
-  #throw an error if already exist a player with the name and team
   @player = Player.find_by(name: name, team_id: team_id)
     if !!@player && @player != self
       errors.add(:name, 'has already been added for that team')

@@ -28,7 +28,7 @@ class ReviewsController < ApplicationController
       @reviews = @player.reviews
       flash[:error] = "No reviews for this player" if @reviews.empty?
     else 
-      @reviews = Review.all.includes(:player, :user) #.includes(:player, :user) less queries?
+      @reviews = Review.includes(:player, :user) #.includes(:player, :user) less queries?
       #not nested
     end 
   end

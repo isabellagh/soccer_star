@@ -15,15 +15,16 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     else
       flash[:error] = "Something went wrong, please try again!"
-      redirect_to signup_path
+      render 'new'
     end
   end
 
   def show
-    if current_user.id != params[:id].to_i   
-      redirect_to user_path(current_user)
-    end 
-      redirect_to '/' if !logged_in?
+    set_user
+    # if current_user.id != params[:id].to_i   
+    #   redirect_to user_path(current_user)
+    # end 
+    #   redirect_to '/' if !logged_in?
   end
 
   def edit
