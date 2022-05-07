@@ -2,14 +2,14 @@
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
-import 'bootstrap/dist/js/bootstrap'
-import 'bootstrap/dist/css/bootstrap'
-require("stylesheets/application.scss")
-require("@rails/ujs").start()
-require("turbolinks").start()
-require("@rails/activestorage").start()
-require("channels")
 
+// import 'bootstrap/dist/js/bootstrap'
+// import 'bootstrap/dist/css/bootstrap'
+// require('stylesheets/application.scss');
+require('@rails/ujs').start();
+require('turbolinks').start();
+require('@rails/activestorage').start();
+require('channels');
 
 //= require rails-ujs
 //= require jquery
@@ -21,3 +21,5 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+import 'bootstrap';
